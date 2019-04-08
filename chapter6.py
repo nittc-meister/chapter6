@@ -18,10 +18,10 @@ for i in range(10):
     temp = (block[0] << 8 | block[1]) >> 3
     if(temp >= 4096):
         temp -= 8192
-    x["id"+i] = {"time" : str(datetime.datetime.now()),"temp" : temp/16.0}
+    x[i] = {"time" : str(datetime.datetime.now()),"temp" : temp/16.0}
     print("Temperature:%6.2f" % (temp / 16.0))
     time.sleep(1)
 
-json.dump(x,json_file)
+json.dump(x,json_file,indent=4)
 
 json_file.close()
