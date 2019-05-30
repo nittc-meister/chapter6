@@ -8,6 +8,7 @@ import json  #課題2用
 i2c = smbus.SMBus(1)
 address = 0x48
 json_file = open('result.json', 'w')  #課題2用
+json_dict = {}
 
 for i in range(10):
     block = i2c.read_i2c_block_data(address, 0x00, 12)
@@ -15,6 +16,11 @@ for i in range(10):
     if(temp >= 4096):
         temp -= 8192
     print("Temperature:%6.2f" % (temp / 16.0))
+    
+
+    json_dict["id" + str(i)] = {"time":str(datetime.datetime.now()),"temp":str(temp/16.0)}
+
     time.sleep(1)
 
+json.dump(json_dict,json_file)
 json_file.close()
