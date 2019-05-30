@@ -9,9 +9,8 @@ i2c = smbus.SMBus(1)
 address = 0x48
 json_file = open('result.json', 'w')  #課題2用
 
-json_data = json.load(json_file)
 
-date = {}
+data = {}
 
 for i in range(10):
     block = i2c.read_i2c_block_data(address, 0x00, 12)
@@ -23,10 +22,10 @@ for i in range(10):
     
     names = ('time', 'temp')
     innerDate = {}
-    innerDate[names[0]] = str(dt.datetime.now())
+    innerDate[names[0]] = str(datetime.datetime.now())
     innerDate[names[1]] = temp / 16.0
     data['id'+str(i)] = innerDate
     print(data)
     
-    json.dump(data, json_file, ensureascii=False, indent=4, sort_keys=True, separators(',', ':'))
+json.dump(data, json_file, indent=4, sort_keys=True, separators=(',', ':'))
 json_file.close()
