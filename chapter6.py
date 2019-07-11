@@ -8,7 +8,7 @@ import json  #課題2用
 i2c = smbus.SMBus(1)
 address = 0x48
 json_file = open('result.json', 'w')  #課題2用
-date1 = datetime.date.now()
+date1 = datetime.datetime.now()
 dic = {}
 
 for i in range(10):
