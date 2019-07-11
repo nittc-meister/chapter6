@@ -9,6 +9,7 @@ i2c = smbus.SMBus(1)
 address = 0x48
 json_file = open('result.json', 'w')  #課題2用
 now = datetime.datetime.now()
+dic={}
 
 for i in range(10):
     block = i2c.read_i2c_block_data(address, 0x00, 12)
