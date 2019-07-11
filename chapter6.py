@@ -18,7 +18,7 @@ for i in range(10):
     print("Temperature:%6.2f" % (temp / 16.0))
     time.sleep(1)
 
-    dic.setdefault("id" + str(i), {"time": str(now), "temp": temp})
+    dic = dic.setdefault("id" + str(i), {"time": str(now), "temp": temp})
 
 json.dump(dic, json_file, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
 json_file.close()
