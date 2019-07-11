@@ -17,7 +17,7 @@ for i in range(10):
         temp -= 8192
     print("Temperature:%6.2f" % (temp / 16.0))
 
-    mydict.setdefault(datetime , temp / 16.0)
+    mydict.setdefault(str(datetime.datetime.now()) , temp / 16.0)
     json.dump(mydict ,json_file , indent=4)
     time.sleep(1)
 
