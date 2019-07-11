@@ -10,6 +10,8 @@ address = 0x48
 json_file = open('result.json', 'w')  #課題2用
 
 for i in range(10):
+    str( datetime.datetime.now())
+    json.dump(datetime.datetime.now())
     block = i2c.read_i2c_block_data(address, 0x00, 12)
     temp = (block[0] << 8 | block[1]) >> 3
     if(temp >= 4096):
