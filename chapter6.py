@@ -14,6 +14,8 @@ for i in range(10):
     temp = (block[0] << 8 | block[1]) >> 3
     if(temp >= 4096):
         temp -= 8192
+    str(datetime.datetime.now())
+    print(datetime.datetime.now())
     print("Temperature:%6.2f" % (temp / 16.0))
     time.sleep(1)
 
