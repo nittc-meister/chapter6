@@ -15,7 +15,10 @@ for i in range(10):
     if(temp >= 4096):
         temp -= 8192
     print("Temperature:%6.2f" % (temp / 16.0))
+    dic = { }
+    dic.setdefault("str( datetime.datetime.now())", temp)
     time.sleep(1)
 
+json.dump(dic,json_file)
 json_file.close()
 
