@@ -19,7 +19,7 @@ for i in range(10):
         temp -= 8192
     print("Temperature:%6.2f" % (temp / 16.0))
     
-    dic[str(datetime.datetime.now())] = (temp/16.0)
+    dic[str( datetime.datetime.now())] = (temp/16.0)
     
     time.sleep(1)
    
