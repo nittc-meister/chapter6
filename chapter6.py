@@ -23,5 +23,5 @@ for i in range(10):
     
     time.sleep(1)
    
-json.dump(json_dic,json_file)
+json.dump(json_file,json_dic)
 json_file.close()
