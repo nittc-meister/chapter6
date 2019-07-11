@@ -8,7 +8,7 @@ import json  #課題2用
 i2c = smbus.SMBus(1)
 address = 0x48
 
-dic = []
+dic = {}
 
 json_file = open('result.json', 'w')  #課題2用
 
@@ -19,7 +19,7 @@ for i in range(10):
         temp -= 8192
     print("Temperature:%6.2f" % (temp / 16.0))
     
-    dic[str( datetime.datetime.now())] = (temp/16.0)
+    dic[str( datetime.datetime.now())] = (temp / 16.0)
     
     time.sleep(1)
    
