@@ -12,8 +12,6 @@ json_dic = []
 
 json_file = open('result.json', 'w')  #課題2用
 
-
-
 for i in range(10):
     block = i2c.read_i2c_block_data(address, 0x00, 12)
     temp = (block[0] << 8 | block[1]) >> 3
